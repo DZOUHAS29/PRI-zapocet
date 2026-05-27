@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+    <title>Register</title>
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <div class="vertical-stack form-layout">
+        <form class="vertical-stack form-size" id="register-form">
+            <h3 class="title">Zaregistrovat se</h3>
+            <p>Objevujte, vařte a mějte všechny své nejoblíbenější recepty bezpečně uložené na jednom místě!</p>
+            <input type="email" placeholder="Email*" name="email" id="email" required />
+            <input type="password" placeholder="Heslo*" name="password" id="password" required />
+            <input type="password" placeholder="Zadejte znovu heslo*" name="password2" id="password2" required />
+            <input type="submit" value="Registrovat" class="button" />
+            <div id="register-output" style="color: red;"></div>
+            <a href="../index.php">Přihlásit</a>
+        </form>
+    </div>
+
+    <script src="../scripts/layout.js"></script>
+    <script>
+        document.getElementById("register-form").addEventListener("submit", event => {
+            event.preventDefault();
+
+            const data = new FormData(event.target);
+
+            fetch("/server/register.php", {
+                method: "POST",
+                body: data
+            })
+                .then(response => response.text())
+                .then(data => {
+                    if (data == "200") {
+                        window.location.href = "/pages/home.php";
+
+                        return;
+                    }
+
+                    document.getElementById("register-output").innerHTML = data;
+                })
+                .catch(err => console.error(err))
+        })
+    </script>
+</body>
+
+</html>

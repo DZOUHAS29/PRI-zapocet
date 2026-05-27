@@ -1,0 +1,277 @@
+body {
+    background-color: #EEEE;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'sans-serif';
+    font-size: 15px;
+    color: #311E10;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    font-size: 15px;
+}
+
+.logo>h3 {
+    margin: 0;
+    align-self: center;
+}
+
+#profile {
+    cursor: pointer;
+    padding-right: 0;
+    align-items: center;
+}
+
+input {
+    border: none;
+    height: 1.8rem;
+    border-radius: 8px;
+
+}
+
+select {
+    border: none;
+    height: 1.8rem;
+    border-radius: 8px;
+    background-color: white;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+.title {
+    margin: 0
+}
+
+.button {
+    height: 2rem;
+    border: none;
+    background-color: #EABE7C;
+    border-radius: 8px;
+    color: #311E10;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #d5ac70;
+}
+
+.filter-content .button {
+    align-self: center;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.top-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: white;
+}
+
+.vertical-stack {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    row-gap: 0.5rem;
+}
+
+.horizontal-stack {
+    display: flex;
+    padding: 0.5rem;
+    column-gap: 0.5rem;
+}
+
+.form-layout {
+    align-items: center;
+    height: 89vh;
+    justify-content: center;
+    text-align: center;
+}
+
+.form-size {
+    width: 30%;
+    padding: 2rem;
+    background-color: #DD6031;
+    color: white;
+    border-radius: 8px;
+}
+
+.form-size>a {
+    color: white;
+}
+
+.recipes-layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 0.7rem;
+    column-gap: 0.7rem;
+}
+
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: calc((100% - 1.4rem) / 3);
+}
+
+.recipe-card:hover {
+    background-color: rgb(235, 233, 233);
+    transform: scale(1.01);
+    transition: transform 0.1s ease-in-out;
+}
+
+.recipe-minutes {
+    text-align: center;
+    font-weight: bolder;
+    color: #DD6031;
+}
+
+.filters {
+    background-color: #DD6031;
+    border-radius: 8px;
+    color: white;
+    padding-bottom: 0;
+}
+
+.filters-button {
+    align-self: flex-end;
+    align-items: center;
+    cursor: pointer;
+}
+
+#arrow {
+    align-self: center;
+    display: flex;
+}
+
+.filters-button:hover {
+    color: rgb(235, 233, 233);
+}
+
+.filter-layout {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+}
+
+.filter-content {
+    justify-content: space-between;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+
+.filter-layout.open {
+    grid-template-rows: 1fr;
+}
+
+.filter-layout.open .filter-content {
+    opacity: 1;
+}
+
+.filter-option {
+    width: 40%;
+}
+
+#recipe-body {
+    background-color: white;
+    border-radius: 8px;
+    margin: 0.5rem;
+}
+
+#recipe-body>h2 {
+    margin: 0;
+    padding-bottom: 0.5rem;
+}
+
+#recipe-body>p {
+    margin: 0;
+    padding-bottom: 0.5rem;
+}
+
+#recipe-body>h4 {
+    margin: 0;
+}
+
+.rating>h4 {
+    margin: 0;
+}
+
+.rating {
+    align-items: end;
+    padding-right: 0;
+}
+
+.rate-option {
+    align-items: center;
+    padding-right: 0;
+}
+
+.option-layout {
+    padding-right: 0;
+}
+
+.back-button .horizontal-stack {
+    padding: 0.2rem;
+    align-items: center;
+}
+
+.back-button {
+    margin: 0.5rem 0.5rem 0 0.5rem;
+    border: none;
+    background-color: #EABE7C;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #d5ac70;
+}
+
+.recipe-name {
+    color: #DD6031;
+    background-color: rgb(255, 255, 255, 0.8);
+    padding: 0.2rem;
+    border-radius: 8px;
+}
+
+#recipe-body h4 {
+    color: #DD6031;
+}
+
+.name-layout {
+    height: 7rem;
+    justify-content: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-image: url(/assets/photo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10%;
+}
+
+.recipe-text {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+}
+
+@media (max-width: 800px) {
+    .form-size {
+        width: 80%;
+    }
+
+    .recipe-card {
+        width: 100%;
+    }
+}
